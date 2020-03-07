@@ -21,7 +21,7 @@ TUTORIAL
 ====================================================================================
 
 
-
+cd ~
 git clone https://github.com/tnscorcoran/odh-fraud-detection-tutorial
 
 change something
