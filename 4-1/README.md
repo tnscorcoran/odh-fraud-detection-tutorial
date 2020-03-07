@@ -166,8 +166,6 @@ aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url http://rook-ceph-rgw-my-s
 Install Kafka Producer and Consumer
 ===================================
 
-copied https://gitlab.com/opendatahub/fraud-detection-tutorial/-/raw/master/kafka/ProducerDeployment.yaml
-to 
 vi 16-ProducerDeployment.yaml
 
 Change where it says <insert s3endpoint> 
