@@ -124,8 +124,11 @@ oc get pods
 oc create -n a-odh-4 -f 14-modelfull-route.yaml
 
 Enable prometheus - on GUI, go to modelfull-modelfull service and add 2 annotations
+
   annotations:
+
     prometheus.io/path: /prometheus
+
     prometheus.io/scrape: 'true'
 
 mv 15-creditcard.csv creditcard.csv
