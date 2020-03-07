@@ -148,17 +148,18 @@ aws configure
 
 
 aws s3 ls --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
-	# empty
 
-S3 Bucket
-USE UPPERCASE (TOMBUCKET)
+It's empty
+
+for your S3 Bucket name, use uppercase (TOMBUCKET)
 
 
 aws s3api create-bucket --bucket TOMBUCKET --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
 aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com --acl public-read-write
 
-# verify
+Verify
+
 aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
 
