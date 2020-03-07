@@ -96,9 +96,9 @@ Interesting parts encoded
 
 Decode them (e.g. at https://www.base64decode.org/) and record them - you'll need them below - 
 
-	"AccessKey": "<decoded AccessKey>",
+	"AccessKey": "decoded AccessKey",
 
-	"SecretKey": "<decoded SecretKey>"
+	"SecretKey": "decoded SecretKey"
 
 
 
@@ -134,10 +134,15 @@ Enable prometheus - on GUI, go to modelfull-modelfull service and add 2 annotati
 mv 15-creditcard.csv creditcard.csv
 
 aws configure
-	<decoded AccessKey>
-	<decoded SecretKey>
+
+	decoded AccessKey
+
+	decoded SecretKey
+
 	[None]
+
 	[None]
+
 
 
 aws s3 ls --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-6edf.6edf.sandbox106.opentlc.com
