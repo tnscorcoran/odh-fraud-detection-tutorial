@@ -34,7 +34,7 @@ git push
 ====================================================================================
 
 
-cd odh-fraud-detection-tutorial
+cd odh-fraud-detection-tutorial/4-1
 
 
 oc create -f 01-opendatahub_v1alpha1_opendatahub_crd.yaml
@@ -45,8 +45,10 @@ oc create -f 02-seldon-deployment-crd.json
 oc new-project a-odh-4
 
 
+
 On GUI
 	install Open Data Hub Operator 	- choose project a-odh-4
+
 	install Strimzi operator  		- choose project a-odh-4
 
 On GUI
