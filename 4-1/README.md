@@ -1,44 +1,15 @@
-cd /Users/tomcorcoran/Desktop/_tc/work/SelfLearning/30-ODH/__4_fraud-detection-demo-ocp-4-1-my-repo
 
-############################################################### login to OCP 4.1 as per ./_ocp-4-1-opentlc-creds.txt
-															   	FORGET - 4.3 - FAILS login to OCP 4.1 as per ./_ocp-4-1-opentlc-servicemesh-creds.txt
- - both on web and CLI
-
-====================================================================================
-
-Juana:
+Demo:
 https://www.youtube.com/watch?v=662FccIWeOE&feature=youtu.be
-
-====================================================================================
-
-ARCHITECTURE
-	https://gitlab.com/opendatahub/fraud-detection-tutorial/-/blob/master/usecase/README.md
-
-TUTORIAL
-	https://gitlab.com/opendatahub/fraud-detection-tutorial
-
-
-====================================================================================
 
 
 cd ~
 
 git clone https://github.com/tnscorcoran/odh-fraud-detection-tutorial
 
-change something
-
-git add --all
-git commit -m "Commit"
-git push
-
-====================================================================================
-
-
 cd odh-fraud-detection-tutorial/4-1
 
-
 oc create -f 01-opendatahub_v1alpha1_opendatahub_crd.yaml
-
 
 oc create -f 02-seldon-deployment-crd.json
 
