@@ -41,14 +41,13 @@ Set proper cluster role and binding - ***** NOTE ASSUMES project a-odh-4 and use
 oc apply -f 04-strimzi-role-binding.yaml
 
 
-oc tag quay.io/odh-jupyterhub/jupyterhub-img:latest jupyterhub-img:latest
 
 oc apply -f 05-frauddetection_cr.yaml
 
 oc get pods -w
 
 
-File /root/rook/cluster/examples/kubernetes/ceph/operator.yaml(7-rook-operator.yaml)
+File /root/rook/cluster/examples/kubernetes/ceph/operator.yaml (07-rook-operator.yaml)
 	name: FLEXVOLUME_DIR_PATH 
 	value: “/etc/kubernetes/kubelet-plugins/volume/exec”
 	name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED 
@@ -152,7 +151,7 @@ oc process -f 16-ProducerDeployment.yaml | oc apply -f -
 
 
 
-# remember - deploy kafka is off here
+Remember - deploy kafka is off here
 vi 5-frauddetection_cr.yaml
 
 
@@ -161,6 +160,8 @@ vi 17-ConsumerDeployment.yaml
 
 oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
 
+
+oc tag quay.io/odh-jupyterhub/jupyterhub-img:latest jupyterhub-img:latest
 
 
 	# Grafana route - https://grafana-a-odh-4.apps.cluster-6edf.6edf.sandbox106.opentlc.com/
