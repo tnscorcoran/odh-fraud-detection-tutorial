@@ -102,11 +102,12 @@ Decode them (e.g. at https://www.base64decode.org/) and record them - you'll nee
 
 
 
-oc project a-odh-4
 
 Update ./12-s3-secretceph.yaml with correct key and secret (encoded)
 
 vi ./12-s3-secretceph.yaml
+
+oc project a-odh-4
 
 oc create -n a-odh-4 -f ./12-s3-secretceph.yaml
 
@@ -122,7 +123,10 @@ oc get pods
 
 oc create -n a-odh-4 -f 14-modelfull-route.yaml
 
-# enable prometheus as described - i.e. on GUI, go to modelfull-modelfull service and add 2 annotations
+Enable prometheus - on GUI, go to modelfull-modelfull service and add 2 annotations
+  annotations:
+    prometheus.io/path: /prometheus
+    prometheus.io/scrape: 'true'
 
 mv 15-creditcard.csv creditcard.csv
 aws configure
