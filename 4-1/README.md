@@ -88,13 +88,13 @@ Wait a few seconds
 
 oc get secrets -n rook-ceph rook-ceph-object-user-my-store-my-user -o json
 
-	# interesting parts encoded
-        "AccessKey": "OEI2MzVYQlhQNUVJR0w5MFNWNlk=",
-        "SecretKey": "UUluT3dDRUFEdUhoek9qQXVtWmxyaXZUdHRSQzNpeTNsVzZyakRxQw=="
+Interesting parts encoded
+	"AccessKey": "<base 64 encoded>",
+	"SecretKey": "<base 64 encoded>"
 
-	# decoded (https://www.base64decode.org/)	
-	  	"AccessKey": "QInOwCEADuHhzOjAumZlrivTttRC3iy3lW6rjDqC"
-		"SecretKey": "jGb4HkmBRsPB3VKOVmPQWfFcWuUljjRd0yE0V67v"
+Decode them (e.g. at https://www.base64decode.org/) and record them - you'll need them below - 
+	"AccessKey": "<decoded>",
+	"SecretKey": "decoded"
 
 
 
