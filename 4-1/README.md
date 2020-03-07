@@ -28,7 +28,7 @@ On GUI
 		./03-kafka-cluster.yaml
 		(in chat with him)
 
-vi 05-frauddetection_cr.yaml
+In 05-frauddetection_cr.yaml we did the following:
 
 	# only:
 		  seldon:
