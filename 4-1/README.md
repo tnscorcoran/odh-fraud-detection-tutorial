@@ -88,10 +88,13 @@ File /root/rook/cluster/examples/kubernetes/ceph/operator.yaml(7-rook-operator.y
 
 
 oc create -f 06-scc.yaml
+
 oc create -f 07-rook-operator.yaml
+
 oc get pods -n rook-ceph-system -w
 
 oc create -f 08-cluster.yaml
+
 oc get pods -n rook-ceph -w
 
 
@@ -99,7 +102,9 @@ oc get pods -n rook-ceph -w
 
 
 oc create -f 09-toolbox.yaml
+
 oc create -f 10-object.yaml
+
 oc get pods -n rook-ceph -w
 
 
