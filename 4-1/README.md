@@ -98,7 +98,7 @@ Decode them (e.g. at https://www.base64decode.org/) and record them - you'll nee
 
 	"AccessKey": "<decoded AccessKey>",
 
-	"SecretKey": "decoded SecretKey"
+	"SecretKey": "<decoded SecretKey>"
 
 
 
@@ -132,9 +132,10 @@ Enable prometheus - on GUI, go to modelfull-modelfull service and add 2 annotati
     prometheus.io/scrape: 'true'
 
 mv 15-creditcard.csv creditcard.csv
+
 aws configure
-	QInOwCEADuHhzOjAumZlrivTttRC3iy3lW6rjDqC
-	jGb4HkmBRsPB3VKOVmPQWfFcWuUljjRd0yE0V67v
+	<decoded AccessKey>
+	<decoded SecretKey>
 	[None]
 	[None]
 
