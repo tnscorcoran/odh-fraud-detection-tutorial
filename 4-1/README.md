@@ -70,10 +70,11 @@ oc create -f 08-cluster.yaml
 oc get pods -n rook-ceph -w
 
 
-(vi object.yaml  - 8080)
-
-
 oc create -f 09-toolbox.yaml
+
+Made the following changes to 10-object.yaml
+
+8080
 
 oc create -f 10-object.yaml
 
