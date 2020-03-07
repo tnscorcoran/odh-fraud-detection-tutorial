@@ -65,7 +65,8 @@ vi 05-frauddetection_cr.yaml
     # don't enable Kafka here
 
 
-# set proper cluster role and binding - ***** NOTE ASSUMES project a-odh-4 and user opentlc-mgr
+Set proper cluster role and binding - ***** NOTE ASSUMES project a-odh-4 and user opentlc-mgr
+
 oc apply -f 04-strimzi-role-binding.yaml
 
 
@@ -76,8 +77,9 @@ oc apply -f 05-frauddetection_cr.yaml
 oc get pods -w
 
 
-# file /root/rook/cluster/examples/kubernetes/ceph/operator.yaml
-#(7-rook-operator.yaml)
+File /root/rook/cluster/examples/kubernetes/ceph/operator.yaml
+
+(7-rook-operator.yaml)
 	name: FLEXVOLUME_DIR_PATH 
 	value: “/etc/kubernetes/kubelet-plugins/volume/exec”
 	name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED 
