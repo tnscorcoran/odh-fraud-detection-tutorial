@@ -83,7 +83,9 @@ oc get pods -n rook-ceph -w
 
 
 oc create -f 11-object-user.yaml
-# wait a sec
+
+Wait a few seconds
+
 oc get secrets -n rook-ceph rook-ceph-object-user-my-store-my-user -o json
 
 	# interesting parts encoded
