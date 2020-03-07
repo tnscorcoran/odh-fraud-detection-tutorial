@@ -111,6 +111,8 @@ oc project a-odh-4
 
 oc create -n a-odh-4 -f ./12-s3-secretceph.yaml
 
+On GUI, in the rook-ceph namespace, expose service - in my case:
+http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
 Install Fraud Detection Model
 -----------------------------
@@ -145,19 +147,19 @@ aws configure
 
 
 
-aws s3 ls --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-6edf.6edf.sandbox106.opentlc.com
+aws s3 ls --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 	# empty
 
 S3 Bucket
 USE UPPERCASE (TOMBUCKET)
 
 
-aws s3api create-bucket --bucket TOMBUCKET --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-6edf.6edf.sandbox106.opentlc.com
+aws s3api create-bucket --bucket TOMBUCKET --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
-aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-6edf.6edf.sandbox106.opentlc.com --acl public-read-write
+aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com --acl public-read-write
 
 # verify
-aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-6edf.6edf.sandbox106.opentlc.com
+aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
 
 Install Kafka Producer and Consumer
@@ -202,7 +204,7 @@ Jupyterhub - Route:		https://jupyterhub-a-odh-4.apps.cluster-6edf.6edf.sandbox10
 AWS_ACCESS_KEY_ID		QInOwCEADuHhzOjAumZlrivTttRC3iy3lW6rjDqC
 AWS_SECRET_ACCESS_KEY	jGb4HkmBRsPB3VKOVmPQWfFcWuUljjRd0yE0V67v
 ENDPOINT_URL			http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-1-2578.ocp4-1-2578.open.redhat.com
-						http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-6edf.6edf.sandbox106.opentlc.com
+						http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 	
 	
 Downloaded
