@@ -46,8 +46,10 @@ oc apply -f 05-frauddetection_cr.yaml
 
 oc get pods -w
 
+Wait till they're all ready  
 
-File /root/rook/cluster/examples/kubernetes/ceph/operator.yaml (07-rook-operator.yaml)
+
+Made the following changes to 07-rook-operator.yaml
 	name: FLEXVOLUME_DIR_PATH 
 	value: “/etc/kubernetes/kubelet-plugins/volume/exec”
 	name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED 
