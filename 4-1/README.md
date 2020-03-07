@@ -47,9 +47,9 @@ oc new-project a-odh-4
 
 
 On GUI
-	install Open Data Hub Operator 	- choose project a-odh-4
+Install Open Data Hub Operator 	- choose project a-odh-4
 
-	install Strimzi operator  		- choose project a-odh-4
+Install Strimzi operator  		- choose project a-odh-4
 
 On GUI
 	when Strimzi operator there, deploy a Kafka 
