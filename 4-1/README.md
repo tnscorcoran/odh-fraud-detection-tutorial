@@ -24,7 +24,7 @@ Install Strimzi operator  		- choose project a-odh-4
 
 On GUI
 	when Strimzi operator there, deploy a Kafka 
-		- overwrite yaml with Maukika's 
+		- overwrite yaml with 
 		./03-kafka-cluster.yaml
 		(in chat with him)
 
