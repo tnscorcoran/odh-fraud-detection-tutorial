@@ -33,12 +33,12 @@ git push
 
 ====================================================================================
 
-# git clone https://gitlab.com/opendatahub/opendatahub-operator.git
-# cd opendatahub-operator
 
 cd odh-fraud-detection-tutorial
 
+
 oc create -f 01-opendatahub_v1alpha1_opendatahub_crd.yaml
+
 
 oc create -f 02-seldon-deployment-crd.json
 
