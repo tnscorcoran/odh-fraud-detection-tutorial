@@ -112,7 +112,9 @@ oc project a-odh-4
 oc create -n a-odh-4 -f ./12-s3-secretceph.yaml
 
 On GUI, in the rook-ceph namespace, expose service rook-ceph-rgw-my-store - in my case it becomes:
+
 http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
+
 
 Install Fraud Detection Model
 -----------------------------
@@ -175,12 +177,14 @@ oc process -f 16-ProducerDeployment.yaml | oc apply -f -
 
 
 
-Remember - deploy kafka is off here
-vi 5-frauddetection_cr.yaml
+Remember - deploy kafka is off here:  05-frauddetection_cr.yaml
 
 
 vi 17-ConsumerDeployment.yaml
-	change seldon route (no trailing spaces)
+
+change where it says *[[insert seldon-core-seldon-apiserver route URL]]* seldon-core-seldon-apiserver route in your ODH project namesapce (in my case a-odh-4) 
+In my case this URL is *http://seldon-core-seldon-apiserver-a-odh-4.apps.cluster-989f.989f.sandbox1049.opentlc.com*
+( remember - no trailing spaces)
 
 oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
 
@@ -188,28 +192,43 @@ oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
 oc tag quay.io/odh-jupyterhub/jupyterhub-img:latest jupyterhub-img:latest
 
 
-	# Grafana route - https://grafana-a-odh-4.apps.cluster-6edf.6edf.sandbox106.opentlc.com/
+Grafana route - in my case https://grafana-a-odh-4.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
-		Dashboards -> Import -> add each of these 4
+Dashboards -> Import -> add each of these 4
+- 18-grafanaKafka.json
+- 18-grafanaModelPrediction.json
+- 18-grafanaSeldonCore.json
+- 18-grafanaSparkMetrics.json
 
 
 
 
 
 
-Jupyterhub and Fraud Detection Notebook
-=======================================
-Jupyterhub - Route:		https://jupyterhub-a-odh-4.apps.cluster-6edf.6edf.sandbox106.opentlc.com/
-AWS_ACCESS_KEY_ID		QInOwCEADuHhzOjAumZlrivTttRC3iy3lW6rjDqC
-AWS_SECRET_ACCESS_KEY	jGb4HkmBRsPB3VKOVmPQWfFcWuUljjRd0yE0V67v
-ENDPOINT_URL			http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-1-2578.ocp4-1-2578.open.redhat.com
-						http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
+Jupyterhub and Fraud Detection Notebook - some examples in my case:
+
+Jupyterhub - Route:		Sign in With OpenShift	https://jupyterhub-a-odh-4.apps.cluster-989f.989f.sandbox1049.opentlc.com
+
+AWS_ACCESS_KEY_ID		decoded AccessKey above
+
+AWS_SECRET_ACCESS_KEY	decoded SecretKey
+
+
+ENDPOINT_URL (rook-ceph-rgw-my-store - above)
+http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 	
 	
-Downloaded
-jupyterhub_frauddetection-notebook-template_TC_ORIG.ipynb
-and
-jupyterhub_jq
-to./__my-files/
+Import ./19-jupyterhub_frauddetection-notebook-template.ipynb to Jupyter
 
-Import them to jupyter
+
+You need JQ - get it from here: https://github.com/stedolan/jq/releases/tag/jq-1.6
+
+In my case it's at:				https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32 
+
+Import them to jupyter by choosing: New -> Terminal on the Jupyter homepage
+
+Then 
+wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32 
+
+mv jq-linux32 jq
+
