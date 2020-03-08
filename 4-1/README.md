@@ -111,7 +111,7 @@ oc project a-odh-4
 
 oc create -n a-odh-4 -f ./12-s3-secretceph.yaml
 
-On GUI, in the rook-ceph namespace, expose service - in my case:
+On GUI, in the rook-ceph namespace, expose service rook-ceph-rgw-my-store - in my case it becomes:
 http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
 Install Fraud Detection Model
@@ -168,7 +168,7 @@ Install Kafka Producer and Consumer
 
 vi 16-ProducerDeployment.yaml
 
-Change where it says <insert s3endpoint> 
+Change where it says [[insert s3endpoint]] the **rook-ceph-rgw-my-store** route above
 	( remember no trailing spaces in s3endpoint )
 
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
