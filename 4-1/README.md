@@ -232,3 +232,10 @@ wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32
 
 mv jq-linux32 jq
 
+Finally - hit the Prmoetheus Route in your browser and get past the self signed cert security error. This will allow your Grafana dashboards to load.
+
+Now the demo - but ensure all placeholders for your URLs, projects, etc are updated to yours in your copy of :
+./19-jupyterhub_frauddetection-notebook-template.ipynb
+
+ 
+
