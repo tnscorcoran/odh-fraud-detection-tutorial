@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: Template
+metadata:
+  name: kafka-consumer
+
+parameters:
+
+  - name: NAMESPACE
+    description: The OpenShift project in use
+    value: a-odh-4
+
+objects:
+  - apiVersion: image.openshift.io/v1
+    kind: ImageStream
+    metadata:
+      labels:
+        template: kafka-consumer
+        build: kafka-consumer-booth-demo
+      name: kafka-consumer
+      namespace: ${NAMESPACE}
+    spec:
+      lookupPolicy:
+        local: false
+
+  - apiVersion: build.openshift.io/v1
+    kind: BuildConfig
+    metadata:
+      name: kafka-consumer
+      namespace: ${NAMESPACE}
+      labels:
+        template: kafka-consumer
+    spec:
+      output:
+        to:
+          kind: ImageStreamTag
+          name: kafka-consumer:latest
+      source:
+        git:
+          uri: https://github.com/nakfour/fradudetection-producer-consumer.git 
+        type: Git
+      strategy:
+        sourceStrategy:
+          env:
+          - name: APP_SCRIPT
+            value: appConsumer.sh
+          - name: GIT_SSL_NO_VERIFY
+            value: 'false'
+          from:
+            kind: DockerImage
+            name: centos/python-36-centos7
+          forcePull: true
+        type: Source
+      triggers:
+        - type: ConfigChange
+
+
+  - apiVersion: v1
+    kind: DeploymentConfig
+    metadata:
+      labels:
+        template: kafka-consumer
+        app: kafka-consumer
+      name: kafka-consumer-dc
+      namespace: ${NAMESPACE}
+    spec:
+      replicas: 1
+      strategy:
+        type: Rolling
+      template:
+        metadata:
+          labels:
+            app: kafka-consumer
+        spec:
+          containers:
+          - name: consumer
+            env:
+            - name: topic
+              value: "odh-demo"
+            - name: bootstrap
+              value: "odh-message-bus-kafka-bootstrap:9092"
+            - name: seldon
+              value: "[[insert seldon-core-seldon-apiserver route URL]]"
+            - name: consumergroup
+              value: "odh-demo-consumer-group"
+          restartPolicy: Always
+      triggers:
+        - type: ConfigChange
+        - type: ImageChange
+          imageChangeParams:
+            automatic: true
+            containerNames:
+              - consumer
+            from:
+              kind: ImageStreamTag
+              name: kafka-consumer:latest   
