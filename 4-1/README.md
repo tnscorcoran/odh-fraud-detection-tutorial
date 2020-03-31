@@ -113,7 +113,7 @@ oc create -n a-odh-4 -f ./12-s3-secretceph.yaml
 
 On GUI, in the rook-ceph namespace, expose service rook-ceph-rgw-my-store - in my case it becomes:
 
-<CEPH-URL>
+[[CEPH-URL]]
 
 
 Install Fraud Detection Model
@@ -150,20 +150,20 @@ aws configure
 
 
 
-aws s3 ls --endpoint-url <CEPH-URL>
+aws s3 ls --endpoint-url [[CEPH-URL]]
 
 It's empty
 
 for your S3 Bucket name, use uppercase (TOMBUCKET)
 
 
-aws s3api create-bucket --bucket TOMBUCKET --endpoint-url <CEPH-URL>
+aws s3api create-bucket --bucket TOMBUCKET --endpoint-url [[CEPH-URL]]
 
-aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url <CEPH-URL> --acl public-read-write
+aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url [[CEPH-URL]] --acl public-read-write
 
 Verify
 
-aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url <CEPH-URL>
+aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url [[CEPH-URL]]
 
 
 Install Kafka Producer and Consumer
@@ -171,7 +171,7 @@ Install Kafka Producer and Consumer
 
 vi 16-ProducerDeployment.yaml
 
-Change where it says [[insert s3endpoint]] to the **rook-ceph-rgw-my-store** route above - in my case **<CEPH-URL>**
+Change where it says [[insert s3endpoint]] to the **rook-ceph-rgw-my-store** route above - in my case **[[CEPH-URL]]**
 	( remember no trailing spaces in s3endpoint )
 
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
@@ -216,7 +216,7 @@ AWS_SECRET_ACCESS_KEY	decoded SecretKey
 
 
 ENDPOINT_URL (rook-ceph-rgw-my-store - above)
-<CEPH-URL>
+[[CEPH-URL]]
 	
 	
 Import ./19-jupyterhub_frauddetection-notebook-template.ipynb to Jupyter
