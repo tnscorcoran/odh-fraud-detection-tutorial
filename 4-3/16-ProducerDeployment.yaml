@@ -88,7 +88,7 @@ objects:
             - name: topic
               value: "odh-demo"
             - name: s3endpoint
-              value: "<insert s3endpoint>"
+              value: "<*insert s3endpoint*>"
             - name: s3bucket
               value: "TOMBUCKET"
             - name: filename
