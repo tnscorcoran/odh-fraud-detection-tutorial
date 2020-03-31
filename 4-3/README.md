@@ -170,7 +170,7 @@ Install Kafka Producer and Consumer
 
 vi 16-ProducerDeployment.yaml
 
-Change where it says [[insert s3endpoint]] to the **rook-ceph-rgw-my-store** route above - in my case **[[CEPH-URL]]**
+Change where it says *insert s3endpoint* to the **rook-ceph-rgw-my-store** route above - in my case **[[CEPH-URL]]**
 	( remember no trailing spaces in s3endpoint )
 
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
