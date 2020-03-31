@@ -88,7 +88,7 @@ objects:
             - name: topic
               value: "odh-demo"
             - name: s3endpoint
-              value: "<*insert s3endpoint*>"
+              value: "http://tc-ceph-route-rook-ceph.apps.cluster-88ad.88ad.example.opentlc.com"
             - name: s3bucket
               value: "TOMBUCKET"
             - name: filename
