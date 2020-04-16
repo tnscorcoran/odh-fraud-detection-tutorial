@@ -7,7 +7,7 @@ parameters:
 
   - name: NAMESPACE
     description: The OpenShift project in use
-    value: a-odh-4
+    value: 00odh
 
 objects:
   - apiVersion: image.openshift.io/v1

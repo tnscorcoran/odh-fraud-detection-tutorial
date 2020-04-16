@@ -7,7 +7,7 @@ parameters:
 
   - name: NAMESPACE
     description: The OpenShift project in use
-    value: a-odh-4
+    value: 00odh
 
 objects:
   - apiVersion: image.openshift.io/v1
@@ -79,7 +79,7 @@ objects:
             - name: bootstrap
               value: "odh-message-bus-kafka-bootstrap:9092"
             - name: seldon
-              value: "http://seldon-core-seldon-apiserver-a-odh-4.apps.cluster-88ad.88ad.example.opentlc.com"
+              value: "http://seldon-core-seldon-apiserver-00odh.apps.cluster-88ad.88ad.example.opentlc.com"
             - name: consumergroup
               value: "odh-demo-consumer-group"
           restartPolicy: Always

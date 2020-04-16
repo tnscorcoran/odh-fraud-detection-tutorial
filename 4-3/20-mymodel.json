@@ -9,7 +9,7 @@
     },
     "spec": {
         "annotations": {
-            "project_name": "a-odh-4",
+            "project_name": "00odh",
             "deployment_version": "0.1"
         },
         "name": "mymodel",

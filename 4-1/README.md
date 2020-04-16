@@ -13,14 +13,14 @@ oc create -f 01-opendatahub_v1alpha1_opendatahub_crd.yaml
 
 oc create -f 02-seldon-deployment-crd.json
 
-oc new-project a-odh-4
+oc new-project 00odh
 
 
 
 On GUI
-Install Open Data Hub Operator 	- choose project a-odh-4
+Install Open Data Hub Operator 	- choose project 00odh
 
-Install Strimzi operator  		- choose project a-odh-4
+Install Strimzi operator  		- choose project 00odh
 
 On GUI
 	when Strimzi operator there, deploy a Kafka 
@@ -36,7 +36,7 @@ In 05-frauddetection_cr.yaml we did the following:
     # don't enable Kafka here
 
 
-Set proper cluster role and binding - ***** NOTE ASSUMES project a-odh-4 and user opentlc-mgr
+Set proper cluster role and binding - ***** NOTE ASSUMES project 00odh and user opentlc-mgr
 
 oc apply -f 04-strimzi-role-binding.yaml
 
@@ -107,9 +107,9 @@ Update ./12-s3-secretceph.yaml with correct key and secret (encoded)
 
 vi ./12-s3-secretceph.yaml
 
-oc project a-odh-4
+oc project 00odh
 
-oc create -n a-odh-4 -f ./12-s3-secretceph.yaml
+oc create -n 00odh -f ./12-s3-secretceph.yaml
 
 On GUI, in the rook-ceph namespace, expose service rook-ceph-rgw-my-store - in my case it becomes:
 
@@ -119,14 +119,14 @@ On GUI, in the rook-ceph namespace, expose service rook-ceph-rgw-my-store - in m
 Install Fraud Detection Model
 -----------------------------
 
-oc create -n a-odh-4 -f 13-modelfull.json
+oc create -n 00odh -f 13-modelfull.json
 
 oc get seldondeployments
 
 oc get pods
 
 
-oc create -n a-odh-4 -f 14-modelfull-route.yaml
+oc create -n 00odh -f 14-modelfull-route.yaml
 
 Enable prometheus - on GUI, go to modelfull-modelfull service and add 2 annotations
 
@@ -183,8 +183,8 @@ Remember - deploy kafka is off here:  05-frauddetection_cr.yaml
 
 vi 17-ConsumerDeployment.yaml
 
-change where it says *[[insert seldon-core-seldon-apiserver route URL]]* seldon-core-seldon-apiserver route in your ODH project namesapce (in my case a-odh-4) 
-In my case this URL is *http://seldon-core-seldon-apiserver-a-odh-4.apps.cluster-989f.989f.sandbox1049.opentlc.com*
+change where it says *[[insert seldon-core-seldon-apiserver route URL]]* seldon-core-seldon-apiserver route in your ODH project namesapce (in my case 00odh) 
+In my case this URL is *http://seldon-core-seldon-apiserver-00odh.apps.cluster-989f.989f.sandbox1049.opentlc.com*
 ( remember - no trailing spaces)
 
 oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
@@ -193,7 +193,7 @@ oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
 oc tag quay.io/odh-jupyterhub/jupyterhub-img:latest jupyterhub-img:latest
 
 
-Grafana route - in my case https://grafana-a-odh-4.apps.cluster-989f.989f.sandbox1049.opentlc.com
+Grafana route - in my case https://grafana-00odh.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
 Dashboards -> Import -> add each of these 4
 - 18-grafanaKafka.json
@@ -208,7 +208,7 @@ Dashboards -> Import -> add each of these 4
 
 Jupyterhub and Fraud Detection Notebook - some examples in my case:
 
-Jupyterhub - Route:		Sign in With OpenShift	https://jupyterhub-a-odh-4.apps.cluster-989f.989f.sandbox1049.opentlc.com
+Jupyterhub - Route:		Sign in With OpenShift	https://jupyterhub-00odh.apps.cluster-989f.989f.sandbox1049.opentlc.com
 
 AWS_ACCESS_KEY_ID		decoded AccessKey above
 

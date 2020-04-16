@@ -28,7 +28,7 @@ metadata:
   name: StrimziAdminBinding
 subjects:
   - kind: User
-    name: system:serviceaccount:a-odh-4:opendatahub-operator
+    name: system:serviceaccount:00odh:opendatahub-operator
   - kind: User
     name: opentlc-mgr
 roleRef:
