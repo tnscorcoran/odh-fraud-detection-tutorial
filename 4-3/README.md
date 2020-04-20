@@ -183,7 +183,8 @@ Remember - deploy kafka is off here:  05-frauddetection_cr.yaml
 
 vi 17-ConsumerDeployment.yaml
 
-If necessary, change the s3endpoint ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** remember no trailing spaces in s3endpoint )
+If necessary, change the *seldon* value ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** or **seldon
+              value: "[[insert seldon-core-seldon-apiserver route URL]]"** - remember no trailing spaces in *seldon* )
 
 oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
 
