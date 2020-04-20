@@ -217,7 +217,15 @@ AWS_SECRET_ACCESS_KEY	decoded SecretKey
 ENDPOINT_URL (rook-ceph-rgw-my-store - above)
 [[CEPH-URL]]
 	
-	
+
+Ensure all placeholders for your URLs, projects, etc are updated to yours in your copy of :
+./19-jupyterhub_frauddetection-notebook-template.ipynb
+
+To that, make the following replacements:
+- [[SELDON URL]] with your SELDON ROUTE URL
+- [[OPENSHIFT MASTER API URL]] - with yours (not the URL used to access in a browser - rather with the CLI)
+- [[ROOK CEPH URL - NO PROTOCOL]] - in the format **rook-ceph-rgw-my-store-rook-ceph.apps.......**
+ 
 Import ./19-jupyterhub_frauddetection-notebook-template.ipynb to Jupyter
 
 
@@ -234,12 +242,5 @@ mv jq-linux32 jq
 
 Finally - hit the Prmoetheus Route in your browser and get past the self signed cert security error. This will allow your Grafana dashboards to load.
 
-Now the demo - but ensure all placeholders for your URLs, projects, etc are updated to yours in your copy of :
-./19-jupyterhub_frauddetection-notebook-template.ipynb
-
-To that, make the following replacements:
-- [[SELDON URL]] with your SELDON ROUTE URL
-- [[OPENSHIFT MASTER API URL]] - with yours (not the URL used to access in a browser - rather with the CLI)
-- [[ROOK CEPH URL - NO PROTOCOL]] - in the format **rook-ceph-rgw-my-store-rook-ceph.apps.......**
- 
+Now run the demo
 
