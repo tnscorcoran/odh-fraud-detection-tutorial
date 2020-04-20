@@ -122,6 +122,7 @@ Install Fraud Detection Model
 oc create -n 00odh -f 13-modelfull.json
 
 oc get seldondeployments
+
 oc get pods
 
 
