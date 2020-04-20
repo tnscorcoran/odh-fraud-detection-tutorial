@@ -171,8 +171,7 @@ Install Kafka Producer and Consumer
 
 vi 16-ProducerDeployment.yaml
 
-Change where it says **insert s3endpoint** to the **rook-ceph-rgw-my-store** route above - in my case **[[CEPH-URL]]**
-	( remember no trailing spaces in s3endpoint )
+If necessary, change the s3endpoint ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** remember no trailing spaces in s3endpoint )
 (btw, I forked referenced - in case it's ever needed https://github.com/tnscorcoran/fradudetection-producer-consumer):
 
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
@@ -184,9 +183,7 @@ Remember - deploy kafka is off here:  05-frauddetection_cr.yaml
 
 vi 17-ConsumerDeployment.yaml
 
-change where it says *[[insert seldon-core-seldon-apiserver route URL]]* seldon-core-seldon-apiserver route in your ODH project namesapce (in my case 00odh) 
-In my case this URL is *http://seldon-core-seldon-apiserver-00odh.apps.cluster-989f.989f.sandbox1049.opentlc.com*
-( remember - no trailing spaces)
+If necessary, change the s3endpoint ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** remember no trailing spaces in s3endpoint )
 
 oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
 
