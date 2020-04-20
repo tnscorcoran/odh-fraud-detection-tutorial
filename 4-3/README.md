@@ -192,7 +192,7 @@ oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
 oc tag quay.io/odh-jupyterhub/jupyterhub-img:latest jupyterhub-img:latest
 
 
-Grafana route - in my case https://grafana-00odh.apps.cluster-989f.989f.sandbox1049.opentlc.com
+Grafana route - in my case https://grafana-00odh.apps-crc.testing
 
 Dashboards -> Import -> add each of these 4
 - 18-grafanaKafka.json
