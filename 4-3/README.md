@@ -173,6 +173,7 @@ vi 16-ProducerDeployment.yaml
 
 Change where it says **insert s3endpoint** to the **rook-ceph-rgw-my-store** route above - in my case **[[CEPH-URL]]**
 	( remember no trailing spaces in s3endpoint )
+(btw, I forked referenced - in case it's ever needed https://github.com/tnscorcoran/fradudetection-producer-consumer):
 
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
 
