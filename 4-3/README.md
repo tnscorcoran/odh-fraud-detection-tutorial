@@ -171,7 +171,7 @@ Install Kafka Producer and Consumer
 
 vi 16-ProducerDeployment.yaml
 
-If necessary, change the s3endpoint ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** remember no trailing spaces in s3endpoint )
+If necessary, change the s3endpoint ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** or **<*insert s3endpoint*>** - remember no trailing spaces in s3endpoint )
 (btw, I forked referenced - in case it's ever needed https://github.com/tnscorcoran/fradudetection-producer-consumer):
 
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
