@@ -207,7 +207,7 @@ Dashboards -> Import -> add each of these 4
 
 Jupyterhub and Fraud Detection Notebook - some examples in my case:
 
-Jupyterhub - Route:		Sign in With OpenShift	https://jupyterhub-00odh.apps.cluster-989f.989f.sandbox1049.opentlc.com
+Jupyterhub - Route:	Sign in With OpenShift	https://jupyterhub-00odh.apps-crc.testing/
 
 AWS_ACCESS_KEY_ID		decoded AccessKey above
 
