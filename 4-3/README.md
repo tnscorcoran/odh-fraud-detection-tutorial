@@ -149,12 +149,14 @@ aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url [[CEPH-URL]]
 Install Kafka Producer and Consumer
 -----------------------------------
 
+Using your favourite editor, replace *[CEPH-URL]* in this file with yours. I use *vi* : 
+```
 vi 16-ProducerDeployment.yaml
-
-If necessary, change the s3endpoint ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** or **<*insert s3endpoint*>** - remember no trailing spaces in s3endpoint )
-(btw, I forked referenced - in case it's ever needed https://github.com/tnscorcoran/fradudetection-producer-consumer):
-
+```
+Now process it:
+```
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
+```
 
 
 
