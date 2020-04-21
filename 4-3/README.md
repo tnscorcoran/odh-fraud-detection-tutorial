@@ -63,11 +63,10 @@ oc create -f 10-object.yaml
 oc get pods -n rook-ceph -w
 ```
 
-
-
+Execute the following and wait a few seconds:
+```
 oc create -f 11-object-user.yaml
-
-Wait a few seconds
+```
 
 oc get secrets -n rook-ceph rook-ceph-object-user-my-store-my-user -o json
 
