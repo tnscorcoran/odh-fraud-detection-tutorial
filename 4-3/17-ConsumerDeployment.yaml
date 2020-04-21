@@ -79,7 +79,7 @@ objects:
             - name: bootstrap
               value: "odh-message-bus-kafka-bootstrap:9092"
             - name: seldon
-              value: "[[insert seldon-core-seldon-apiserver route URL]]"
+              value: "[seldon-core-seldon-apiserver route URL]"
             - name: consumergroup
               value: "odh-demo-consumer-group"
           restartPolicy: Always

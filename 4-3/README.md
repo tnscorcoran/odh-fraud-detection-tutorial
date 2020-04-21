@@ -149,7 +149,7 @@ aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url [[CEPH-URL]]
 Install Kafka Producer and Consumer
 -----------------------------------
 
-Using your favourite editor, replace *[CEPH-URL]* in this file with yours. I use *vi* : 
+Recall earlier in 05-frauddetection_cr.yaml we did not enable Kafka. We do it with the producer and consumer next. Using your favourite editor, replace *[CEPH-URL]* in this file with yours. I use *vi* : 
 ```
 vi 16-ProducerDeployment.yaml
 ```
@@ -158,20 +158,18 @@ Now process it:
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
 ```
 
-
-
-Remember - deploy kafka is off here:  05-frauddetection_cr.yaml
-
-
+On the GUI, with project *00odh* selected, copy the value of the OpenShift Route, *seldon-core-seldon-apiserver*. In my case it's *http://seldon-core-seldon-apiserver-00odh.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. We'll refer to it as *[seldon-core-seldon-apiserver route URL]* (_without the trailing space_)
+Again, using your favourite editor, substitute the *[seldon-core-seldon-apiserver route URL]* placeholder with your actual URL (without trailing /). I use vi :
+```
 vi 17-ConsumerDeployment.yaml
-
-If necessary, change the *seldon* value ( where it says **http://rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing** or **seldon
-              value: "[[insert seldon-core-seldon-apiserver route URL]]"** - remember no trailing spaces in *seldon* )
-
+Now process it:
+```
 oc process -f 17-ConsumerDeployment.yaml | oc apply -f -
-
-
+```
+Now you'll need to tag this Quay.io image:
+```
 oc tag quay.io/odh-jupyterhub/jupyterhub-img:latest jupyterhub-img:latest
+```
 
 
 Grafana route - in my case https://grafana-00odh.apps-crc.testing
