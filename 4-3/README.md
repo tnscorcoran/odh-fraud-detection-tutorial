@@ -98,19 +98,18 @@ oc expose svc rook-ceph-rgw-my-store
 oc get Route rook-ceph-rgw-my-store
 ```
 Copy this value - it will be something like 
-- *rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. Prefix it with *http* to become something like *http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. 
-- Well refer to that as *[CEPH-URL]*. 
+- *rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. Prefix it with *http* to become something like *http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*
+- Well refer to that later on as *[CEPH-URL]*. 
 
 
 Install Fraud Detection Model
 -----------------------------
-
+Execute the following and wait till all Pods are ready:
+```
 oc create -n 00odh -f 13-modelfull.json
-
 oc get seldondeployments
-
-oc get pods
-
+oc get pods -w 
+```
 
 oc create -n 00odh -f 14-modelfull-route.yaml
 
