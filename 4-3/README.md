@@ -80,18 +80,23 @@ Decode them (e.g. at https://www.base64decode.org/) and record them. We'll refer
 - AccessKey: *[decoded AccessKey]*
 - SecretKey: *[decoded SecretKey]*
 
-Update your ./12-s3-secretceph.yaml with correct key and secret (encoded) using vi or your favourite editor, e.g.:
+Update your ./12-s3-secretceph.yaml with correct key and secret (encoded) using vi or your favourite editor, e.g.
 ```
 vi ./12-s3-secretceph.yaml
 ```
 
-Execute the following:
+Now execute the following:
 ```
 oc project 00odh
 oc create -n 00odh -f ./12-s3-secretceph.yaml
 ```
 
-On GUI, in the rook-ceph namespace, expose service rook-ceph-rgw-my-store - in my case it becomes:
+On GUI, in the *rook-ceph* namespace, create an OpenShift route from service *rook-ceph-rgw-my-store*. To that, execute the following:
+```
+oc project rook-ceph
+oc expose svc rook-ceph-rgw-my-store
+```
+Copy this value - it will be something like **
 
 [[CEPH-URL]]
 
