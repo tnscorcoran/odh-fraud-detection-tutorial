@@ -183,18 +183,24 @@ Navigate to: Dashboards -> Import -> add import each of these 4 - using the 4 JS
 - 18-grafanaSeldonCore.json
 - 18-grafanaSparkMetrics.json
 
+On the GUI, with project 00odh selected, open your Jupyterhub OpenShift Route. Sign In with OpenShift. Click *Allow selected permissions*.
+
+Under *Environment Variables*:
+- for AWS_ACCESS_KEY_ID, enter your [decoded AccessKey] created above
+- for AWS_SECRET_ACCESS_KEY, enter your [decoded SecretKey] created above
+
+Now we're going to create a number of new Environment Variables. We have to do them one at a time.  For the first one, enter the following:
+- for Variable name: enter *ENDPOINT_URL*
+- for Variable value: enter the value you recorded above in placeholder *[CEPH-URL]*
 
 
 
 
 
-Jupyterhub and Fraud Detection Notebook - some examples in my case:
 
-Jupyterhub - Route:	Sign in With OpenShift	https://jupyterhub-00odh.apps-crc.testing/
 
-AWS_ACCESS_KEY_ID		decoded AccessKey above
 
-AWS_SECRET_ACCESS_KEY	decoded SecretKey
+
 
 
 ENDPOINT_URL (rook-ceph-rgw-my-store - above)
