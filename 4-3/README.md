@@ -107,13 +107,12 @@ Install Fraud Detection Model
 Execute the following and wait till all Pods are ready:
 ```
 oc create -n 00odh -f 13-modelfull.json
+oc project 00odh
 oc get seldondeployments
-oc get pods -w 
+oc create -n 00odh -f 14-modelfull-route.yaml
 ```
 
-oc create -n 00odh -f 14-modelfull-route.yaml
-
-Enable prometheus - on GUI, go to modelfull-modelfull service and add 2 annotations
+On GUI, enable Prometheus. To do that, go to service *modelfull-modelfull*, open its yaml and add 2 annotations (indented below line 4 in libne with *getambassador.io/config: |*)
 
   annotations:
 
