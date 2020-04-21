@@ -3,18 +3,16 @@ ODH Fraud Detection Demo:
 https://www.youtube.com/watch?v=662FccIWeOE&feature=youtu.be
 
 
-cd ~
-
 git clone https://github.com/tnscorcoran/odh-fraud-detection-tutorial
 
 cd odh-fraud-detection-tutorial/4-3
 
+Execute:
+```
 oc create -f 01-opendatahub_v1alpha1_opendatahub_crd.yaml
-
 oc create -f 02-seldon-deployment-crd.yaml
-
 oc new-project 00odh
-
+```
 
 
 On GUI
