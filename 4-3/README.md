@@ -16,13 +16,16 @@ oc new-project 00odh
 
 
 On GUI:
-- Install Open Data Hub Operator 	- choose project 00odh
+- Install Open Data Hub operator 	- choose project 00odh
 - Install Strimzi operator  		- choose project 00odh
 - When Strimzi operator there, deploy a Kafka 
 	- overwrite yaml with ./03-kafka-cluster.yaml
 
-Set proper cluster role and binding (NOTE ASSUMES project 00odh and user opentlc-mgr - modify if not).
-In 05-frauddetection_cr.yaml we set *odh_deploy: true* in seldon section (don't enable Kafka here).
+In *04-strimzi-role-binding.yaml*, I use project *00odh* and user *opentlc-mgr*. If yours are different, modify as appropriate.
+Also, FYI as we don't enable Kafka here, in 05-frauddetection_cr.yaml (seldon section) we already set: 
+```
+odh_deploy: true
+```
 Execute the following and wait till all Pods are ready.
 ```
 oc apply -f 04-strimzi-role-binding.yaml
