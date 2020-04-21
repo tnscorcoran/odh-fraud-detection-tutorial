@@ -20,6 +20,7 @@ On GUI:
 - Install Strimzi operator  		- choose project 00odh
 - When Strimzi operator there, deploy a Kafka 
 	- overwrite yaml with ./03-kafka-cluster.yaml
+
 Execute these and wait till all Pods are ready:
 ```
 oc get pods -w
