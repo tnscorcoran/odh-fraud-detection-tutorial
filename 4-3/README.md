@@ -188,48 +188,26 @@ On the GUI, with project 00odh selected, open your Jupyterhub OpenShift Route. S
 Under *Environment Variables*:
 - for AWS_ACCESS_KEY_ID, enter your [decoded AccessKey] created above
 - for AWS_SECRET_ACCESS_KEY, enter your [decoded SecretKey] created above
+- under *ENDPOINT_URL*, enter the value you recorded above in placeholder *[CEPH-URL]*
 
 Now we're going to create a number of new Environment Variables. We have to do them one at a time.  For the first one, enter the following:
 - for Variable name: enter *ENDPOINT_URL*
 - for Variable value: enter the value you recorded above in placeholder *[CEPH-URL]*
 
-
-
-
-
-
-
-
-
-
-
-ENDPOINT_URL (rook-ceph-rgw-my-store - above)
-[[CEPH-URL]]
-	
-
-Ensure all placeholders for your URLs, projects, etc are updated to yours in your copy of :
+Next, ensure all placeholders for your URLs, projects, etc are updated to yours in your copy of:
 ./19-jupyterhub_frauddetection-notebook-template.ipynb
 
-To that, make the following replacements:
+At a minimum, make the following replacements:
 - [[SELDON URL]] with your SELDON ROUTE URL (e.g. http://seldon-core-seldon-apiserver-00odh.apps-crc.testing)
 - [[OPENSHIFT MASTER API URL]] - with yours (e.g. https://api.crc.testing:6443)
 - [[ROOK CEPH URL - NO PROTOCOL]] - (e.g. rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing)
  
 Import ./19-jupyterhub_frauddetection-notebook-template.ipynb to Jupyter
 
-
-You need JQ - get it from here: https://github.com/stedolan/jq/releases/tag/jq-1.6
-
-In my case it's at:				https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32 
-
-Import them to jupyter by choosing: New -> Terminal on the Jupyter homepage
-
-Then 
+You need JQ - available from here: https://github.com/stedolan/jq/releases/tag/jq-1.6
+Run the following:
+```
 wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32 
-
 mv jq-linux32 jq
-
-Finally - hit the Prmoetheus Route in your browser and get past the self signed cert security error. This will allow your Grafana dashboards to load.
-
-Now run the demo
-
+```
+Now open the file *./19-jupyterhub_frauddetection-notebook-template.ipynb* and run the demo
