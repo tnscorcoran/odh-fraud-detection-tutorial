@@ -31,7 +31,7 @@ Also, FYI as we don't enable Kafka here, in 05-frauddetection_cr.yaml (seldon se
 ```
 odh_deploy: true
 ```
-Execute the following and wait till JulityrHub, Spark, Prometheus etc Pods are all ready.
+Execute the following and wait till Jupyterhub, Spark, Prometheus etc Pods are all ready.
 ```
 oc apply -f 04-strimzi-role-binding.yaml
 oc apply -f 05-frauddetection_cr.yaml
