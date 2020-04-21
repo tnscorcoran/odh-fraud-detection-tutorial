@@ -30,10 +30,12 @@ oc apply -f 05-frauddetection_cr.yaml
 oc get pods -w
 ```
 In the this next section, I changed 07-rook-operator.yaml, setting the following (ensuring indentation is perfect):
-	name: FLEXVOLUME_DIR_PATH 
-	value: “/etc/kubernetes/kubelet-plugins/volume/exec”
-	name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED 
-	value: “true” 
+```
+name: FLEXVOLUME_DIR_PATH 
+value: “/etc/kubernetes/kubelet-plugins/volume/exec”
+name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED 
+value: “true” 
+```
 Execute these and wait till all Pods are ready:
 ```
 oc create -f 06-scc.yaml
