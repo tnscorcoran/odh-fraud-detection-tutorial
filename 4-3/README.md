@@ -21,20 +21,16 @@ On GUI:
 - When Strimzi operator there, deploy a Kafka 
 	- overwrite yaml with ./03-kafka-cluster.yaml
 
-Set proper cluster role and binding (NOTE ASSUMES project 00odh and user opentlc-mgr - modify if not)
-
+Set proper cluster role and binding (NOTE ASSUMES project 00odh and user opentlc-mgr - modify if not).
+In 05-frauddetection_cr.yaml we set *odh_deploy: true* in seldon section (don't enable Kafka here).
+Execute the following and wait till all Pods are ready.
+```
 oc apply -f 04-strimzi-role-binding.yaml
-
-
-
 oc apply -f 05-frauddetection_cr.yaml
-
 oc get pods -w
+```
 
-Wait till they're all ready  
-
-
-Made the following changes to 07-rook-operator.yaml
+I the following changes to 07-rook-operator.yaml
 	name: FLEXVOLUME_DIR_PATH 
 	value: “/etc/kubernetes/kubelet-plugins/volume/exec”
 	name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED 
@@ -43,16 +39,22 @@ Made the following changes to 07-rook-operator.yaml
 
 	***** ensure indentation is perfect ******
 
-
+In the this next section, I changed 07-rook-operator.yaml, setting the following ():
+	name: FLEXVOLUME_DIR_PATH 
+	value: “/etc/kubernetes/kubelet-plugins/volume/exec”
+	name: ROOK_HOSTPATH_REQUIRES_PRIVILEGED 
+	value: “true” 
+Execute these and wait till all Pods are ready:
+```
 oc create -f 06-scc.yaml
-
 oc create -f 07-rook-operator.yaml
-
 oc get pods -n rook-ceph-system -w
-
+```
+Execute the following and wait till all Pods are ready:
+```
 oc create -f 08-cluster.yaml
-
 oc get pods -n rook-ceph -w
+```
 
 
 oc create -f 09-toolbox.yaml
