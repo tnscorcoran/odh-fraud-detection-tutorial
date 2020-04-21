@@ -18,6 +18,7 @@ oc new-project 00odh
 
 
 On GUI
+------
 Install Open Data Hub Operator 	- choose project 00odh
 
 Install Strimzi operator  		- choose project 00odh
