@@ -56,16 +56,12 @@ oc create -f 08-cluster.yaml
 oc get pods -n rook-ceph -w
 ```
 
-
+In 10-object.yaml, I changed port to 8080. Execute the following and wait till all Pods are ready:
+```
 oc create -f 09-toolbox.yaml
-
-Made the following changes to 10-object.yaml
-
-8080
-
 oc create -f 10-object.yaml
-
 oc get pods -n rook-ceph -w
+```
 
 
 
