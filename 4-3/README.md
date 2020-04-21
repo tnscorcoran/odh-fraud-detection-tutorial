@@ -127,36 +127,27 @@ mv 15-creditcard.csv creditcard.csv
 In this section, you'll need the *aws* CLI. Download if necessary.
 ```
 aws configure
-- enter *[decoded AccessKey]* from above
-- enter *[decoded AccessKey]* from above
-- enter *[None]*
-- enter *[None]*
+- enter [decoded AccessKey] from above
+- enter [decoded AccessKey] from above
+- enter [None]
+- enter [None]
 ```
-This will be empty
+Substitute your *[CEPH-URL]* from earlier and execute (it will be empty):
 ```
 aws s3 ls --endpoint-url [[CEPH-URL]]
 ```
-
-
-
-
-
-It's empty
-
-for your S3 Bucket name, use uppercase (TOMBUCKET)
-
-
-aws s3api create-bucket --bucket TOMBUCKET --endpoint-url [[CEPH-URL]]
-
+In executing the following, for your S3 Bucket name, _*use and uppercase value*_ (I used *TOMBUCKET*) as uppercase will be needed for it to work later - due to some anomoly in Jupyter. 
+```
+aws s3api create-bucket --bucket TOMBUCKET --endpoint-url [CEPH-URL]
 aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url [[CEPH-URL]] --acl public-read-write
-
-Verify
-
+```
+Execute the same *ls* again to verify file is present:
+```
 aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url [[CEPH-URL]]
-
+```
 
 Install Kafka Producer and Consumer
-===================================
+-----------------------------------
 
 vi 16-ProducerDeployment.yaml
 
