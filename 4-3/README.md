@@ -173,10 +173,11 @@ Now you'll need to tag this Quay.io image:
 oc tag quay.io/odh-jupyterhub/jupyterhub-img:latest jupyterhub-img:latest
 ```
 
+On the GUI, with project 00odh selected, open your Prometheus OpenShift Route (just to get past any self-signed cert issues). 
 
-Grafana route - in my case https://grafana-00odh.apps-crc.testing
+Next, also on the GUI, open your Grafana route - in my case https://grafana-00odh.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com
 
-Dashboards -> Import -> add each of these 4
+Navigate to: Dashboards -> Import -> add import each of these 4 - using the 4 JSON files in this repo.
 - 18-grafanaKafka.json
 - 18-grafanaModelPrediction.json
 - 18-grafanaSeldonCore.json
