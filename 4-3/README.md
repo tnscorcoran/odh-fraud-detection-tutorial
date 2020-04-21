@@ -68,30 +68,28 @@ Execute the following and wait a few seconds:
 oc create -f 11-object-user.yaml
 ```
 
+Execute the following:
+```
 oc get secrets -n rook-ceph rook-ceph-object-user-my-store-my-user -o json
+```
+Copy the 2 fields in the secret: *AccessKey* and *SecretKey*. These are Base64 encodes values. We'll refer to their keys and values as
+- AccessKey: *[base 64 encoded AccessKey]*
+- SecretKey: *[base 64 encoded SecretKey]*
 
-Interesting parts encoded
+Decode them (e.g. at https://www.base64decode.org/) and record them. We'll refer to their keys and values as:
+- AccessKey: *[decoded AccessKey]*
+- SecretKey: *[decoded SecretKey]*
 
-	"AccessKey": "<base 64 encoded AccessKey>",
-
-	"SecretKey": "<base 64 encoded SecretKey>"
-
-Decode them (e.g. at https://www.base64decode.org/) and record them - you'll need them below - 
-
-	"AccessKey": "decoded AccessKey",
-
-	"SecretKey": "decoded SecretKey"
-
-
-
-
-Update ./12-s3-secretceph.yaml with correct key and secret (encoded)
-
+Update your ./12-s3-secretceph.yaml with correct key and secret (encoded) using vi or your favourite editor, e.g.:
+```
 vi ./12-s3-secretceph.yaml
+```
 
+Execute the following:
+```
 oc project 00odh
-
 oc create -n 00odh -f ./12-s3-secretceph.yaml
+```
 
 On GUI, in the rook-ceph namespace, expose service rook-ceph-rgw-my-store - in my case it becomes:
 
