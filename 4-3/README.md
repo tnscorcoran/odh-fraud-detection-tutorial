@@ -29,7 +29,7 @@ oc apply -f 04-strimzi-role-binding.yaml
 oc apply -f 05-frauddetection_cr.yaml
 oc get pods -w
 ```
-In the this next section, I changed 07-rook-operator.yaml, setting the following (ensuring indentation is perfect):
+In the this next section, I changed 07-rook-operator.yaml, setting the following, ensuring indentation is perfect. Just an FYI - no need to do this - it's done already:
 ```
 name: FLEXVOLUME_DIR_PATH 
 value: “/etc/kubernetes/kubelet-plugins/volume/exec”
