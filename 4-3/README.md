@@ -112,7 +112,7 @@ oc get seldondeployments
 oc create -n 00odh -f 14-modelfull-route.yaml
 ```
 
-On GUI, enable Prometheus. To do that, go to service *modelfull-modelfull*, open its yaml and add 2 prometheus annotations (indented below line 4 in line with *getambassador.io/config: |*)
+On GUI, enable Prometheus. To do that, go to service *modelfull-modelfull*, open its yaml and add 2 prometheus annotations (indented below line 4 above *getambassador.io/config: |*)
 ```
   annotations:
     prometheus.io/path: /prometheus
