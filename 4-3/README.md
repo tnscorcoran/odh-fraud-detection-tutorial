@@ -20,6 +20,10 @@ On GUI:
 - Install Strimzi operator  		- choose project 00odh
 - When Strimzi operator there, deploy a Kafka 
 	- overwrite yaml with ./03-kafka-cluster.yaml
+Execute these and wait till all Pods are ready:
+```
+oc get pods -w
+```
 
 In *04-strimzi-role-binding.yaml*, I use project *00odh* and user *opentlc-mgr*. If yours are different, modify as appropriate.
 Also, FYI as we don't enable Kafka here, in 05-frauddetection_cr.yaml (seldon section) we already set: 
