@@ -124,19 +124,22 @@ Rename *15-creditcard.csv*:
 mv 15-creditcard.csv creditcard.csv
 ```
 
+In this section, you'll need the *aws* CLI. Download if necessary.
+```
 aws configure
-
-	decoded AccessKey
-
-	decoded SecretKey
-
-	[None]
-
-	[None]
-
-
-
+- enter *[decoded AccessKey]* from above
+- enter *[decoded AccessKey]* from above
+- enter *[None]*
+- enter *[None]*
+```
+This will be empty
+```
 aws s3 ls --endpoint-url [[CEPH-URL]]
+```
+
+
+
+
 
 It's empty
 
