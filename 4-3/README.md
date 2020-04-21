@@ -158,7 +158,7 @@ Now process it:
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
 ```
 
-On the GUI, with project *00odh* selected, copy the value of the OpenShift Route, *seldon-core-seldon-apiserver*. In my case it's *http://seldon-core-seldon-apiserver-00odh.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. We'll refer to it as *[seldon-core-seldon-apiserver route URL]* (_without the trailing slash)
+On the GUI, with project *00odh* selected, copy the value of the OpenShift Route, *seldon-core-seldon-apiserver*. In my case it's *http://seldon-core-seldon-apiserver-00odh.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. We'll refer to it as *[seldon-core-seldon-apiserver route URL]* (_without the trailing slash_)
 
 Again, using your favourite editor, substitute the *[seldon-core-seldon-apiserver route URL]* placeholder with your actual URL (without trailing /). I use vi :
 ```
