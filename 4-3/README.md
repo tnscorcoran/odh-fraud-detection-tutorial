@@ -97,9 +97,9 @@ oc project rook-ceph
 oc expose svc rook-ceph-rgw-my-store
 oc get Route rook-ceph-rgw-my-store
 ```
-Copy this value - it will be something like *rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*
-Prefix it with *http* to become something like *http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. Well refer to that as
-*[CEPH-URL]*. 
+Copy this value - it will be something like 
+- *rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. Prefix it with *http* to become something like *http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. 
+- Well refer to that as *[CEPH-URL]*. 
 
 
 Install Fraud Detection Model
