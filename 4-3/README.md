@@ -191,10 +191,6 @@ Under *Environment Variables*:
 - for AWS_SECRET_ACCESS_KEY, enter your [decoded SecretKey] created above
 - under *ENDPOINT_URL*, enter the value you recorded above in placeholder *[CEPH-URL]*
 
-Now we're going to create a number of new Environment Variables. We have to do them one at a time.  For the first one, enter the following:
-- for Variable name: enter *ENDPOINT_URL*
-- for Variable value: enter the value you recorded above in placeholder *[CEPH-URL]*
-
 Next, ensure all placeholders for your URLs, projects, etc are updated to yours in your copy of:
 ./19-jupyterhub_frauddetection-notebook-template.ipynb
 
