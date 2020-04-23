@@ -159,9 +159,9 @@ Now process it:
 oc process -f 16-ProducerDeployment.yaml | oc apply -f -
 ```
 
-On the GUI, with project *00odh* selected, copy the value of the OpenShift Route, *seldon-core-seldon-apiserver*. In my case it's *http://seldon-core-seldon-apiserver-00odh.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. We'll refer to it as *[seldon-core-seldon-apiserver route URL]* (_without the trailing slash_)
+On the GUI, with project *00odh* selected, copy the value of the OpenShift Route, *seldon-core-seldon-apiserver*. In my case it's *http://seldon-core-seldon-apiserver-00odh.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. We'll refer to it as *[SELDON URL]* (_without the trailing slash_)
 
-Again, using your favourite editor, substitute the *[seldon-core-seldon-apiserver route URL]* placeholder with your actual URL (without trailing /). I use vi :
+Again, using your favourite editor, substitute the *[SELDON URL]* placeholder with your actual URL (without trailing /). I use vi :
 ```
 vi 17-ConsumerDeployment.yaml
 ```
@@ -195,9 +195,9 @@ Next, ensure all placeholders for your URLs, projects, etc are updated to yours 
 ./19-jupyterhub_frauddetection-notebook-template.ipynb
 
 At a minimum, make the following replacements:
-- [[SELDON URL]] with your SELDON ROUTE URL (e.g. http://seldon-core-seldon-apiserver-00odh.apps-crc.testing)
-- [[OPENSHIFT MASTER API URL]] - with yours (e.g. https://api.crc.testing:6443)
-- [[ROOK CEPH URL - NO PROTOCOL]] - (e.g. rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing)
+- [SELDON URL] with your SELDON ROUTE URL (e.g. http://seldon-core-seldon-apiserver-00odh.apps-crc.testing)
+- [OPENSHIFT MASTER API URL] - with yours (e.g. https://api.crc.testing:6443)
+- [ROOK CEPH URL - NO PROTOCOL] - (e.g. rook-ceph-rgw-my-store-rook-ceph.apps-crc.testing)
  
 Import ./19-jupyterhub_frauddetection-notebook-template.ipynb to Jupyter
 

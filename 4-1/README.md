@@ -239,8 +239,8 @@ Now the demo - but ensure all placeholders for your URLs, projects, etc are upda
 ./19-jupyterhub_frauddetection-notebook-template.ipynb
 
 To that, make the following replacements:
-- [[SELDON URL]] with your SELDON ROUTE URL
-- [[OPENSHIFT MASTER API URL]] - with yours (not the URL used to access in a browser - rather with the CLI)
-- [[ROOK CEPH URL - NO PROTOCOL]] - in the format **rook-ceph-rgw-my-store-rook-ceph.apps.......**
+- [SELDON URL] with your SELDON ROUTE URL
+- [OPENSHIFT MASTER API URL] - with yours (not the URL used to access in a browser - rather with the CLI)
+- [ROOK CEPH URL - NO PROTOCOL] - in the format **rook-ceph-rgw-my-store-rook-ceph.apps.......**
  
 
