@@ -91,7 +91,7 @@ oc project 00odh
 oc create -n 00odh -f ./12-s3-secretceph.yaml
 ```
 
-On GUI, in the *rook-ceph* namespace, create an OpenShift route from service *rook-ceph-rgw-my-store*. To that, execute the following:
+In the *rook-ceph* namespace, create an OpenShift route from service *rook-ceph-rgw-my-store*. To that, execute the following:
 ```
 oc project rook-ceph
 oc expose svc rook-ceph-rgw-my-store
