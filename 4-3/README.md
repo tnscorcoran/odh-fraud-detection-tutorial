@@ -99,7 +99,7 @@ oc get Route rook-ceph-rgw-my-store
 ```
 Copy this value - it will be something like 
 - *rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*. Prefix it with *http* to become something like *http://rook-ceph-rgw-my-store-rook-ceph.apps.cluster-ocp4-3-2657.ocp4-3-2657.example.opentlc.com*
-- Well refer to that later on as *[CEPH-URL]*. 
+- We'll refer to that later on as *[CEPH-URL]*. 
 
 
 Install Fraud Detection Model
