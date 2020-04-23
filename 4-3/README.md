@@ -202,7 +202,7 @@ At a minimum, make the following replacements:
 Import ./19-jupyterhub_frauddetection-notebook-template.ipynb to Jupyter
 
 You need JQ - available from here: https://github.com/stedolan/jq/releases/tag/jq-1.6
-Run the following:
+On the Jupyter home page, choose *New -> Terminal* then run the following:
 ```
 wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux32 
 mv jq-linux32 jq
