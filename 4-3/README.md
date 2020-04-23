@@ -135,16 +135,16 @@ aws configure
 ```
 Substitute your *[CEPH-URL]* from earlier and execute (it will be empty):
 ```
-aws s3 ls --endpoint-url [[CEPH-URL]]
+aws s3 ls --endpoint-url [CEPH-URL]
 ```
 In executing the following, for your S3 Bucket name, _*use and uppercase value*_ (I used *TOMBUCKET*) as uppercase will be needed for it to work later - due to some anomoly in Jupyter. 
 ```
 aws s3api create-bucket --bucket TOMBUCKET --endpoint-url [CEPH-URL]
-aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url [[CEPH-URL]] --acl public-read-write
+aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url [CEPH-URL] --acl public-read-write
 ```
 Execute the same *ls* again to verify file is present:
 ```
-aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url [[CEPH-URL]]
+aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url [CEPH-URL]
 ```
 
 Install Kafka Producer and Consumer
