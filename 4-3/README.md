@@ -142,7 +142,7 @@ In executing the following, for your S3 Bucket name, _*use and uppercase value*_
 aws s3api create-bucket --bucket TOMBUCKET --endpoint-url [CEPH-URL]
 aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --acl public-read-write --endpoint-url [CEPH-URL]
 ```
-Execute the same *ls* again to verify file is present:
+Execute this *ls* to verify file is present:
 ```
 aws s3 ls s3://TOMBUCKET/OPEN/uploaded/ --endpoint-url [CEPH-URL]
 ```
