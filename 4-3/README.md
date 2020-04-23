@@ -140,7 +140,7 @@ aws s3 ls --endpoint-url [CEPH-URL]
 In executing the following, for your S3 Bucket name, _*use and uppercase value*_ (I used *TOMBUCKET*) as uppercase will be needed for it to work later - due to some anomoly in Jupyter. 
 ```
 aws s3api create-bucket --bucket TOMBUCKET --endpoint-url [CEPH-URL]
-aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --endpoint-url [CEPH-URL] --acl public-read-write
+aws s3 cp creditcard.csv s3://TOMBUCKET/OPEN/uploaded/creditcard.csv --acl public-read-write --endpoint-url [CEPH-URL]
 ```
 Execute the same *ls* again to verify file is present:
 ```
