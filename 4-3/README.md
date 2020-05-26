@@ -16,7 +16,7 @@ oc new-project 00odh
 
 
 On GUI:
-- Install Open Data Hub operator 	- choose project 00odh
+- Install Open Data Hub operator 	- choose project 00odh and choose legacy (instead of Beta)
 - Install Strimzi operator  		- choose project 00odh
 - When Strimzi operator there, deploy a Kafka 
 	- overwrite yaml with ./03-kafka-cluster.yaml
